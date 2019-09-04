@@ -196,24 +196,24 @@ describe ApplicationController do
         expect(page.status_code).to eq(200)
       end
 
-      # it 'lets user create a tweet if they are logged in' do
-      #   user = User.create(:username => "becky567", :email => "starz@aol.com", :password => "kittens")
+      it 'lets user create a tweet if they are logged in' do
+        user = User.create(:username => "becky567", :email => "starz@aol.com", :password => "kittens")
 
-      #   visit '/login'
+        visit '/login'
 
-      #   fill_in(:username, :with => "becky567")
-      #   fill_in(:password, :with => "kittens")
-      #   click_button 'submit'
+        fill_in(:username, :with => "becky567")
+        fill_in(:password, :with => "kittens")
+        click_button 'submit'
 
-      #   visit '/tweets/new'
-      #   fill_in(:content, :with => "tweet!!!")
-      #   click_button 'submit'
+        visit '/tweets/new'
+        fill_in(:content, :with => "tweet!!!")
+        click_button 'submit'
 
-      #   user = User.find_by(:username => "becky567")
-      #   tweet = Tweet.find_by(:content => "tweet!!!")
-      #   expect(tweet).to be_instance_of(Tweet)
-      #   expect(tweet.user_id).to eq(user.id)
-      #   expect(page.status_code).to eq(200)
+        user = User.find_by(:username => "becky567")
+        tweet = Tweet.find_by(:content => "tweet!!!")
+        expect(tweet).to be_instance_of(Tweet)
+        expect(tweet.user_id).to eq(user.id)
+        expect(page.status_code).to eq(200)
       end
 
       it 'does not let a user tweet from another user' do
