@@ -22,6 +22,7 @@ class TweetsController < ApplicationController
  
  
  post '/tweets' do
+  binding.pry 
   @new_tweet = current_user.tweets.build(content: params["content"])
   @new_tweet.save
   redirect to '/tweets'
