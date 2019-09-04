@@ -80,21 +80,21 @@ end
 #   end
  
  
-patch '/tweets/:id' do
-  #binding.pry
-  @tweet = Tweet.find_by_id(params["id"])
+# patch '/tweets/:id' do
+#   #binding.pry
+#   @tweet = Tweet.find_by_id(params["id"])
   
-  if logged_in? && @tweet.user_id == session[:id] && params["content"] != ""
-    @tweet.update(content: params["content"])
-    redirect to '/tweets'
-  elsif logged_in? && @tweet.user_id == session[:id] && params["content"] == ""
-    redirect to "/tweets/#{@tweet.id}/edit"
-  elsif !logged_in?
-    redirect to '/login'
-  else
-    redirect to '/tweets'
-  end
-end
+#   if logged_in? && @tweet.user_id == session[:id] && params["content"] != ""
+#     @tweet.update(content: params["content"])
+#     redirect to '/tweets'
+#   elsif logged_in? && @tweet.user_id == session[:id] && params["content"] == ""
+#     redirect to "/tweets/#{@tweet.id}/edit"
+#   elsif !logged_in?
+#     redirect to '/login'
+#   else
+#     redirect to '/tweets'
+#   end
+# end
  
  
  delete '/tweets/:id/delete' do
