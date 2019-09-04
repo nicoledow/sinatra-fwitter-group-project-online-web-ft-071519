@@ -83,8 +83,12 @@ patch '/tweets/:id' do
   @tweet = Tweet.find_by_id(params["id"])
   
   if logged_in? && @tweet.user_id == session[:id]
-  @tweet.update(content: params["content"])
-  redirect to '/tweets'
+    @tweet.update(content: params["content"])
+    redirect to '/tweets'
+  else
+    redirect to '/tweets'
+    
+  end
 end
  
  
