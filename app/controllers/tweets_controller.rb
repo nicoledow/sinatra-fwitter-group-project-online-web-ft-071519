@@ -43,7 +43,7 @@ end
    binding.pry
    @tweet = Tweet.find_by_id(params["id"])
    if @tweet.user_id == session[:id]
-   erb :'/tweets/edit_tweet'
+     erb :'/tweets/edit_tweet'
  end
  
  
