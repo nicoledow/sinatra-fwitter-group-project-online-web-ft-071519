@@ -56,7 +56,8 @@ end
   #   end
   if logged_in?
     
-    
+  else
+    redirect to '/tweets'
   end
  end
  
