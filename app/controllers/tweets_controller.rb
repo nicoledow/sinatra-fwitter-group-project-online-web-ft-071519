@@ -13,7 +13,6 @@ class TweetsController < ApplicationController
  
  get '/tweets/new' do
    #binding.pry
-  @current_user = current_user
    if !!session[:id]
      erb :'tweets/create_tweet'
    else
