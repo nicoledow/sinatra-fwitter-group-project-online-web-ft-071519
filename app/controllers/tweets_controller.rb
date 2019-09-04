@@ -85,7 +85,7 @@ end
   
   if logged_in?
     if @tweet.user_id == session[:id]
-      
+      @tweet.destroy
     end
   else
     redirect to '/login'
