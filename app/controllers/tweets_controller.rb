@@ -84,7 +84,7 @@ end
   @tweet = Tweet.find_by_id(params["id"])
   
   if logged_in?
-    
+    if @tweet.user_id == session[:id]
   else
     redirect to '/login'
   end
