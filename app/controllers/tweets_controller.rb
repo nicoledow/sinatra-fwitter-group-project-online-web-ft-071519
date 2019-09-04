@@ -78,12 +78,12 @@ end
 #   end
  
  
-# patch '/tweets/:id' do
-#   #binding.pry
-#   @tweet = Tweet.find_by_id(params["id"])
-#   @tweet.update(content: params["content"])
-#   redirect to '/tweets'
-# end
+patch '/tweets/:id' do
+  #binding.pry
+  @tweet = Tweet.find_by_id(params["id"])
+  @tweet.update(content: params["content"])
+  redirect to '/tweets'
+end
  
  
  delete '/tweets/:id/delete' do
