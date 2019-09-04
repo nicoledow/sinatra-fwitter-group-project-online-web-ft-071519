@@ -41,6 +41,7 @@ end
  
  
  delete '/tweets/:id/delete' do
+   binding.pry
    "write code here to delete the tweet"
  end
 
