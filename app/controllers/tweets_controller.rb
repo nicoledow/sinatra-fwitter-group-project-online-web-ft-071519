@@ -55,6 +55,11 @@ end
  end
  
  
+ patch 'tweets/:id' do
+   
+ end
+ 
+ 
  delete '/tweets/:id/delete' do
    Tweet.find_by_id(params["id"]).destroy
    redirect to '/tweets'
