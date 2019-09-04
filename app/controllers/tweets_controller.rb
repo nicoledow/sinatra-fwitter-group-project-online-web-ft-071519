@@ -23,9 +23,11 @@ class TweetsController < ApplicationController
  
  post '/tweets' do
   if params["content"] != "" 
-  @new_tweet = current_user.tweets.build(content: params["content"])
-  @new_tweet.save
-  redirect to '/tweets'
+    @new_tweet = current_user.tweets.build(content: params["content"])
+    @new_tweet.save
+    redirect to '/tweets'
+  else
+  end
 end
 
  
