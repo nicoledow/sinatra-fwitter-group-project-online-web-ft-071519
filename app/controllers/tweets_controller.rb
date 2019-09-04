@@ -40,6 +40,7 @@ end
  
  get '/tweets/:id/edit' do
    #"code to edit tweet here"
+   erb :'/tweets/edit_tweet'
  end
  
  
