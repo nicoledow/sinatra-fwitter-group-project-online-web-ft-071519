@@ -42,8 +42,12 @@ end
    #"code to edit tweet here"
    binding.pry
    @tweet = Tweet.find_by_id(params["id"])
+   
    if @tweet.user_id == session[:id]
      erb :'/tweets/edit_tweet'
+   else
+     redirect to '/tweets'
+    end
  end
  
  
