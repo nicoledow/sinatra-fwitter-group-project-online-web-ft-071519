@@ -55,7 +55,7 @@ end
   #   redirect to '/tweets'
   #   end
   if logged_in?
-    if
+    if @tweet.user_id == session[:id]
       
     end
   else
