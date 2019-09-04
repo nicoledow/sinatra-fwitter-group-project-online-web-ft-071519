@@ -93,7 +93,6 @@ patch '/tweets/:id' do
     redirect to '/login'
   else
     redirect to '/tweets'
-    
   end
 end
  
