@@ -87,6 +87,8 @@ end
     if @tweet.user_id == session[:id]
       @tweet.destroy
       redirect to '/tweets'
+    else
+      redirect to '/tweets'
     end
   else
     redirect to '/login'
