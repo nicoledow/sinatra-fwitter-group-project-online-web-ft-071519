@@ -86,7 +86,7 @@ end
   if logged_in?
     
   else
-    
+    redirect to '/login'
   end
  end
 
