@@ -38,6 +38,11 @@ end
    @author = User.find_by_id(@tweet.user_id)
    erb :'/tweets/show_tweet'
  end
+ 
+ 
+ delete 'tweets/:id/delete' do
+   
+ end
 
 
 
