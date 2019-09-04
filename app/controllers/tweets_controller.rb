@@ -79,8 +79,8 @@ end
  
  
  delete '/tweets/:id/delete' do
-   Tweet.find_by_id(params["id"]).destroy
-   redirect to '/tweets'
+  # Tweet.find_by_id(params["id"]).destroy
+  # redirect to '/tweets'
  end
 
 
