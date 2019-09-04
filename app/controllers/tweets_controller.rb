@@ -33,7 +33,7 @@ end
  
  
  get '/tweets/:id' do
-   binding.pry
+   #binding.pry
    if logged_in?
      @tweet = Tweet.find_by_id(params["id"])
      @author = User.find_by_id(@tweet.user_id)
