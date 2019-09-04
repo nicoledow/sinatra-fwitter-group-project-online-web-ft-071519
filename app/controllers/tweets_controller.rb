@@ -57,6 +57,8 @@ end
   if logged_in?
     if @tweet.user_id == session[:id]
       erb :'/tweets/edit_tweet'
+    else
+      redirect to '/tweets'
     end
   else
     redirect to '/login'
