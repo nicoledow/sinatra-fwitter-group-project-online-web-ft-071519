@@ -39,6 +39,8 @@ end
      @author = User.find_by_id(@tweet.user_id)
      erb :'/tweets/show_tweet'
    else
+     redirect to '/tweets'
+   end
  end
  
  
