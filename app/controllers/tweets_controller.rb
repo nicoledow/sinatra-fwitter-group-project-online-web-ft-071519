@@ -14,7 +14,7 @@ class TweetsController < ApplicationController
  get '/tweets/new' do
    binding.pry
   @current_user = current_user
-   if logged_in?
+   if !!session[:id]
      erb :'tweets/create_tweet'
    else
      redirect to '/login'
