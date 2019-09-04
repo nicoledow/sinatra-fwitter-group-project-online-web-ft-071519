@@ -47,13 +47,13 @@ end
  get '/tweets/:id/edit' do
    @tweet = Tweet.find_by_id(params["id"])
    
-   if @tweet.user_id == session[:id]
-     erb :'/tweets/edit_tweet'
-   elsif !logged_in?
-     redirect to '/login'
-   else
-     redirect to '/tweets'
-    end
+  # if @tweet.user_id == session[:id]
+  #   erb :'/tweets/edit_tweet'
+  # elsif !logged_in?
+  #   redirect to '/login'
+  # else
+  #   redirect to '/tweets'
+  #   end
  end
  
  
@@ -95,6 +95,7 @@ end
 #     redirect to '/tweets'
 #   end
 # end
+
  
  
  delete '/tweets/:id/delete' do
