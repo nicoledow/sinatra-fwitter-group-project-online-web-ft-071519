@@ -47,13 +47,6 @@ end
  get '/tweets/:id/edit' do
    @tweet = Tweet.find_by_id(params["id"])
    
-  # if @tweet.user_id == session[:id]
-  #   erb :'/tweets/edit_tweet'
-  # elsif !logged_in?
-  #   redirect to '/login'
-  # else
-  #   redirect to '/tweets'
-  #   end
   if logged_in?
     if @tweet.user_id == session[:id]
       erb :'/tweets/edit_tweet'
@@ -66,31 +59,9 @@ end
  end
  
  
-# patch '/tweets/:id' do
-#   binding.pry
-#     if logged_in?
-#       if params["content"] == ""
-#         redirect to "/tweets/#{params[:id]}/edit"
-#       else
-#         @tweet = Tweet.find_by_id(params[:id])
-#         if @tweet && @tweet.user == current_user
-#           if @tweet.update(content: params["content"])
-#             redirect to "/tweets/#{@tweet.id}"
-#           else
-#             redirect to "/tweets/#{@tweet.id}/edit"
-#           end
-#         else
-#           redirect to '/tweets'
-#         end
-#       end
-#     else
-#       redirect to '/login'
-#     end
-#   end
  
  
 patch '/tweets/:id' do
-  #binding.pry
   @tweet = Tweet.find_by_id(params["id"])
   
   if logged_in? && @tweet.user_id == session[:id] && params["content"] != ""
