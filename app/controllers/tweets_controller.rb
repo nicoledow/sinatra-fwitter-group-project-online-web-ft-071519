@@ -81,6 +81,7 @@ end
 patch '/tweets/:id' do
   binding.pry
   @tweet = Tweet.find_by_id(params["id"])
+  if logged_in? && @tweet.user_id
   @tweet.update(content: params["content"])
   redirect to '/tweets'
 end
