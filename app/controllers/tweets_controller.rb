@@ -41,8 +41,7 @@ end
  
  
  delete '/tweets/:id/delete' do
-   binding.pry
-   "write code here to delete the tweet"
+   @tweet_to_delete = Tweet.find_by_id(params["id"])
  end
 
 
