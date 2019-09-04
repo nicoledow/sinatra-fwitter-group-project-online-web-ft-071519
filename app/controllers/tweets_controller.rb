@@ -57,6 +57,7 @@ end
  
  patch '/tweets/:id' do
    binding.pry
+   @tweet = Tweet.find_by_id(params["id"])
  end
  
  
