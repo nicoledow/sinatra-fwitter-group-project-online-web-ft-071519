@@ -41,7 +41,7 @@ end
  get '/tweets/:id/edit' do
    #"code to edit tweet here"
    binding.pry
-   
+   @tweet = Tweet.find_by_id(params["id"])
    erb :'/tweets/edit_tweet'
  end
  
