@@ -41,7 +41,7 @@ end
  
  
  delete '/tweets/:id/delete' do
-   @tweet_to_delete = Tweet.find_by_id(params["id"])
+   Tweet.find_by_id(params["id"]).destroy
  end
 
 
