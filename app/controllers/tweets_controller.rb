@@ -87,6 +87,8 @@ patch '/tweets/:id' do
     redirect to '/tweets'
   elsif logged_in? && @tweet.user_id == session[:id] && params["content"] == ""
     redirect to "/tweets/#{@tweet.id}/edit"
+  elsif !logged_in
+    redirect to '/login'
   else
     redirect to '/tweets'
     
