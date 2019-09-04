@@ -34,7 +34,6 @@ end
  
  
  get '/tweets/:id' do
-   #binding.pry
    @tweet = Tweet.find_by_id(params["id"])
    @author = User.find_by_id(@tweet.user_id)
    erb :'/tweets/show_tweet'
