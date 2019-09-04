@@ -55,7 +55,7 @@ end
  end
  
  
- patch 'tweets/:id' do
+ patch '/tweets/:id' do
    binding.pry
  end
  
