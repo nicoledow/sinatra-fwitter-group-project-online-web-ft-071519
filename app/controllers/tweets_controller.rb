@@ -21,18 +21,20 @@ class TweetsController < ApplicationController
  end
  
  
+ post '/tweets' do
+  @new_tweet = current_user.tweets.build(content: params["content"])
+  @new_tweet.save
+  redirect to '/tweets'
+end
+
+ 
+ 
  get '/tweets/:id' do
    @tweet = Tweet.find_by_id(params["id"])
    @author = User.find_by_id(@tweet.user_id)
    erb :'/tweets/show_tweet'
  end
 
-
-post '/tweets' do
-  @new_tweet = current_user.tweets.build(content: params["content"])
-  @new_tweet.save
-  redirect to '/tweets'
-end
 
 
 helpers do
