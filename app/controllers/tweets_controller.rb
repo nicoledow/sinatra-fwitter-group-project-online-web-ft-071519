@@ -40,7 +40,7 @@ end
  
  get '/tweets/:id/edit' do
    #"code to edit tweet here"
-   binding.pry
+   #binding.pry
    @tweet = Tweet.find_by_id(params["id"])
    
    if @tweet.user_id == session[:id]
