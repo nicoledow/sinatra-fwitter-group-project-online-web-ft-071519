@@ -49,6 +49,7 @@ end
    
    if @tweet.user_id == session[:id]
      erb :'/tweets/edit_tweet'
+   #elsif !logged_in?
    else
      redirect to '/tweets'
     end
