@@ -41,7 +41,7 @@ end
  
  
  delete 'tweets/:id/delete' do
-   
+   "write code here to delete the tweet"
  end
 
 
