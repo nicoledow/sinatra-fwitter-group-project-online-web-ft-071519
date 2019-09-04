@@ -12,7 +12,7 @@ class TweetsController < ApplicationController
  
  
  get '/tweets/new' do
-   #@current_user = current_user
+  @current_user = current_user
    if logged_in?
      erb :'tweets/create_tweet'
    else
